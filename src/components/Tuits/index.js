@@ -4,7 +4,7 @@ import Tuit from './Tuit';
 /**
  * A container to display a list of tuits.
  */
-const Tuits = ({ tuits }) => {
+const Tuits = ({ tuits = [] }) => {
   return (
     <div>
       <ul className='ttr-tuits list-group'>
