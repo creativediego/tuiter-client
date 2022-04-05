@@ -8,12 +8,12 @@ const Tuits = ({ tuits = [] }) => {
   console.log(tuits);
   return (
     <div>
-      <ul className='ttr-tuits list-group'>
+      {/* <ul className='ttr-tuits list-group'>
         {tuits &&
           tuits.map((tuit) => {
             return tuit ? <Tuit key={tuit.id} tuitFromList={tuit} /> : null;
           })}
-      </ul>
+      </ul> */}
     </div>
   );
 };
