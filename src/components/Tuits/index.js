@@ -5,6 +5,7 @@ import Tuit from './Tuit';
  * A container to display a list of tuits.
  */
 const Tuits = ({ tuits = [] }) => {
+  console.log(tuits);
   return (
     <div>
       <ul className='ttr-tuits list-group'>

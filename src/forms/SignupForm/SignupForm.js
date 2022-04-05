@@ -13,7 +13,6 @@ const SignupForm = () => {
   const profileComplete = useSelector((state) => state.user.profileComplete);
   const dispatch = useDispatch();
   const [values, setValues] = useState({});
-  console.log('user', user);
   useEffect(() => {
     const defaultVales = {
       name: '',
