@@ -16,7 +16,7 @@ export const login = (user) =>
   api
     .post(`${SECURITY_API}/login`, user)
     .then((response) => {
-      console.log('THE HEADERS', response.headers);
+      console.log('THE DATA', response.data);
       return response.data;
     })
     .catch((err) => err.response.data);
