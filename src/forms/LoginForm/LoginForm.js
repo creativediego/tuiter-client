@@ -49,7 +49,7 @@ const LoginForm = () => {
         onClick={(e) => submit(e)}
         className='btn btn-primary mb-5 mt-3'
       >
-        <Loader loading={loading} content='Sign in' />
+        <Loader loading={loading} content='Log in' />
       </button>
     </form>
   );

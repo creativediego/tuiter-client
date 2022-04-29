@@ -21,6 +21,8 @@ const LoginView = () => {
           <div className='btn btn-primary rounded-pill' onClick={google}>
             <i className='fa-brands fa-google'></i> Login with Google
           </div>
+        </div>
+        <div className='mt-5'>
           <SignupForm />
         </div>
         {error && <AlertBox message={error} />}

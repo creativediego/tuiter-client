@@ -2,7 +2,7 @@ import {
   createUser,
   deleteUser,
   findAllUsers,
-  findUserById,
+  findUserById
 } from '../services/users-service';
 
 // sample user to insert

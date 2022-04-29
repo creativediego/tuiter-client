@@ -1,11 +1,11 @@
-import { React, useEffect, useState } from 'react';
+import { React, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
 /**
  * A popup modal that can be dismissed. Takes all content as props.
  * @param {boolean} show the show status of the modal
  * @param {string} title heading of the modal
- * @param {string} content body content
+ * @param {string} inputs body content
  * @param {boolan} withExternalButton if the modal should display an accompanying button that triggers its display
  * @param {string} externalButtonTitle the label of the external button
  * @param {string} size of the modal; sm, md, lg
@@ -13,44 +13,20 @@ import { Button, Modal } from 'react-bootstrap';
  * @param {function} handleSubmit handles the button submit action
  */
 const PopupModal = ({ props }) => {
-  const {
-    show,
-    title,
-    content,
-    withExternalButton,
-    externalButtonTitle,
-    size,
-    submitTitle,
-    handleSubmit,
-  } = props;
-  const [showModal, setShow] = useState(show);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const { show, setShow, content, handleSubmit } = props;
 
   useEffect(() => {
-    setShow(showModal);
-  }, [showModal]);
+    setShow(show);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [show]);
   return (
     <div>
-      {withExternalButton ? (
-        <Button className='rounded-pill' variant='primary' onClick={handleShow}>
-          {externalButtonTitle}
-        </Button>
-      ) : null}
-
-      <Modal size={size} show={showModal} onHide={handleClose}>
+      <Modal size={content.size} show={show} onHide={setShow}>
         <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
+          <Modal.Title>{content.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{content}</Modal.Body>
+        <Modal.Body>{content.body}</Modal.Body>
         <Modal.Footer>
-          <Button
-            className='rounded-pill'
-            variant='secondary'
-            onClick={handleClose}
-          >
-            Close
-          </Button>
           <Button
             type='submit'
             className='rounded-pill'
@@ -59,7 +35,7 @@ const PopupModal = ({ props }) => {
               handleSubmit();
             }}
           >
-            {submitTitle}
+            {content.submitLabel}
             {/* <i className='fas fa-spinner fa-pulse'></i> */}
           </Button>
         </Modal.Footer>

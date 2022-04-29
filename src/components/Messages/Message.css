@@ -1,0 +1,7 @@
+.logged-in-user-message {
+    border-bottom-right-radius: 0px !important;
+}
+
+.other-user-message {
+    border-bottom-left-radius: 0px !important;
+}

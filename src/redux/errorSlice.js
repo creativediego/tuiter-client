@@ -9,10 +9,10 @@ const errorSlice = createSlice({
     status: null,
   },
   reducers: {
-    updateError: (state, action) => {
+    setGlobalError: (state, action) => {
       state.data = action.payload.error;
     },
   },
 });
-export const { updateError } = errorSlice.actions;
+export const { setGlobalError } = errorSlice.actions;
 export default errorSlice.reducer;
