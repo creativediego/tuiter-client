@@ -13,10 +13,6 @@ const SignupForm = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data);
   const profileComplete = useSelector((state) => state.user.profileComplete);
-<<<<<<< HEAD
-  const dispatch = useDispatch();
-  const [values, setValues] = useState({});
-=======
   const [inputValues, setInputValues] = useState({});
   const [inputFields, setInputFields] = useState([]);
   const [showSignupModal, setShowSignupModal] = useState(false);
@@ -43,7 +39,6 @@ const SignupForm = () => {
     dispatch(updateUserThunk({ id: user.id, ...inputValues }));
   };
 
->>>>>>> 8b7c39249f3ac7c07bb8163bb8718768f4784115
   useEffect(() => {
     const defaultInputVales = {
       name: '',
